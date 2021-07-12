@@ -1,0 +1,162 @@
+1) Book a cab
+   ==========
+
+  Method : GET
+
+Route:
+======
+   http://localhost:3000/book?lattitude={lattitude}&longitude={longitude}&color={color}
+
+
+ Parameters:
+============
+
+
+ Field                        Type                   Description
+========                      =====                  ============
+ latitude                     String                lattitude of the user
+ 
+ longitude                    String                longitude of the user
+
+ color                        String                color of the cab required 
+
+
+Booking a cab is done by using a nearby or getclosest cab functinality:-
+======================================================================
+
+1) A function is written which returns us the nearest location cab based on the paramters provided
+
+2)Function accepts two parameterd location and color
+
+    lcoation ----> takes latitude and longitude which we provide in the query
+
+3) The book api gets the closest location from the function and based on that it return the data
+
+4) it returns
+   a)cabid
+   b)driver name
+   c)driver phonenumber 
+   d)passengerUsername
+   e)location
+
+
+
+
+Success 200 Response:
+ ====================
+
+ HTTP/1.1 200 Success
+{
+
+   "cabid":"1",
+   "drivername":"xyz",
+   "driverphonenumber":"7737737337", 
+   "passengerUsername":"abc"
+   "location":"nizampet"
+
+}
+
+
+ Client Error 4XXX
+ =====================
+
+Response Expample:-
+==================
+
+   HTTP/1.1 400 Bad Request
+
+    {
+      "message": "No cabs avialable"
+    }
+
+
+   HTTP/1.1 400 not found
+
+    {
+      "message": "Invalid/Missing parameters"
+    }
+
+
+
+
+2) GetAllBookings of a client:-
+  ===========================
+
+
+Method  :  GET
+
+Route:
+======        
+http://localhost/getAllBookings
+
+
+Paramters:-
+============
+
+ field              type
+
+ id                 string
+
+
+
+Success 200 Response:
+ ====================
+
+ HTTP/1.1 200 Success
+{
+
+   "userName":"gshs",
+   "email":"ahahh@gmailcom",
+   "cabid:"1"
+
+}
+
+
+Client Error 4XXX
+ =====================
+
+Response Expample:-
+==================
+
+   
+
+
+   HTTP/1.1 400 not found
+
+    {
+      "message": "Invalid/Missing parameters"
+    }
+
+    
+
+
+3) Inserting Cab details:-
+=========================
+
+
+Method :post
+
+Route:
+======
+
+ http://localhost/cabDetails
+
+
+
+Success 200 Response:
+ ====================
+
+ HTTP/1.1 200 Success
+{
+
+   "message:"cab details posted successfully";
+
+}
+
+
+
+ 
+
+
+
+
